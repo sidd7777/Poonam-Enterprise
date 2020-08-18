@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Poonam Enterprises</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+		  integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Literata:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"></head>
+	
+	<style type="text/css">
+
+		#inputSearch{
+			margin: 5px;
+			width:300px;
+		}
+
+		button{
+			margin: auto;
+		}
+
+		button:hover{
+			text-decoration-color: #fff;
+		}
+		li{
+			margin: auto;
+		}
+		.stock .ledger{
+			color: blue !important;
+		}
+
+		.ledger-text{
+			color: blue;
+		}
+
+		.entry-text{
+			color: blue;
+		}
+		.credit-text{
+			color: blue;
+		}
+
+		.navbar-dark .navbar-nav .nav-link {
+    		color: rgba(255, 255, 255,0.8) !important;
+		}	
+
+		.navbar-dark .navbar-nav .nav-link:hover{
+			color: rgba(255,255,255,1) !important;
+		}
+
+		.navbar-dark .navbar-nav .nav-link:active{
+			color: rgba(255,255,255,1) !important;
+		}
+
+		a{
+			font-weight: 500;
+			font-size: 17px;
+			font-family: 'Literata', serif;
+		}
+
+		.Right{
+			margin-left: 60%;
+		}
+
+		.space{
+			margin-right: 30px;
+			align-content: center;
+		}
+
+		.accountIcon{
+			color: #fff;
+			margin: auto;
+			margin-left: 30px ;
+		}
+
+		.navItem{
+			margin-left: 20%;
+
+		}
+		nav{
+			border: 1px solid black;
+			box-shadow: 2px 2px 5px;
+		}
+	    .row{
+			width: 1400px;
+			height: 450px;
+			border:1px solid black;
+			margin-top: 80px;
+			margin-left: 50px;
+			border-radius: 15px;
+		
+		}
+		.col1{
+			border: 1px solid black;
+			height: 230px;
+			margin-top: 40px;
+			margin-left: 50px;
+			display: flex;
+		}
+		.symbol{
+			border: 1px solid white;
+			height: 30px;
+			width:40px;
+			
+			padding: 5px;
+			/*margin-top:100px;
+			margin-left: 120px;*/
+			cursor: pointer;
+			transition: 0.5s;
+		}
+
+		.col1 {
+			align-items: center;
+			justify-content: center;
+		}
+		/*.col1 p{
+			border: 1px solid white;
+			height: 40px;
+			width:180px;
+			margin-bottom: 0;
+			font-size: 20px;
+			padding: 0px;
+			/*margin-left: 0px;
+			margin-top: 95px;
+			
+
+		} */
+		.col2{
+			border: 1px solid white;
+			height: 230px;
+			margin-top: 40px;
+			margin-left: 400px;
+			display: flex;
+		}
+		.col2 form{
+			border:1px solid white;
+
+			width: 400px;
+			padding-top: 0px;
+			padding-left: 50px;
+			margin-left: 95px;
+		}
+		#date{
+		max-width: 185px;
+		margin-left: 30px;
+		background-color: white;
+		border-radius: 5px;
+		color: black;
+		padding-left: 20px;
+		}
+
+		
+		#client{
+		max-width: 700px;
+		margin-left: 12px;
+		border-radius: 5px;
+		background-color: white;
+		color: black;
+		}
+		.table{
+			margin-top: 0px;
+			max-width: 100%;
+			
+			border: 2px solid white;
+		}
+		.first{
+			width:1500px;
+			height: 35px;
+			margin-top:0;
+		}
+		.first th{
+			width: 100px;
+			border:1px solid white;
+			padding-left: 40px;
+			padding-top: 10px;
+		}
+		.second td{
+			border:1px solid white;
+		}
+		
+		#amount{
+			margin-top: 0px;
+			margin-left: 25px;
+			border:1px solid black;
+			border-radius: 8px;
+		}
+		#cgst{
+			margin-top: 0px;
+			margin-left: 25px;
+			border-radius: 8px;
+			border:1px solid black;
+		}
+		#sgst{
+			margin-top: 0px;
+			margin-left: 25px;
+			border-radius: 8px;
+			border:1px solid black;
+		}
+		#igst{
+			margin-top: 0px;
+			margin-left: 25px;
+			border-radius: 8px;
+			border:1px solid black;
+		}
+		#length{
+			margin-top: 0px;
+			margin-left: 25px;
+			border-radius: 8px;
+			border:1px solid black;
+
+		}
+		.xyz{
+			width: 100%;
+			margin-bottom: 0;
+			margin-top: 0;
+		}
+		.entry-box button[type="submit"]{
+			border: 0.5px solid black;
+			border-radius: 45px;
+			cursor: pointer;
+			background-color: rgb(13,122,228); 
+			width: 150px;
+			height: 32px;
+			float: right;
+			padding-top: 1px;
+			color: white;
+			font-weight: bold;
+			transition: 0.5s;
+
+		}
+		.entry-box button[type="submit"]:hover{
+			box-shadow: 0px 9px 10px -2px rgba(0,0,0,0.55);
+			-webkit-box-shadow: 0px 9px 10px -2px rgba(0,0,0,0.55);
+			-moz-box-shadow: 0px 9px 10px -2px rgba(0,0,0,0.55);
+
+		}
+		.sym{
+			margin-left: 5px;
+		}
+		.table1{
+			text-align: center;
+			padding-left: 30px;
+			width: 100%;
+		}
+		.row3{
+			text-align: center;
+			padding-left: 50px;
+			padding-bottom: 40px;
+			border-bottom: 2px solid rgb(192,192,192);
+		}
+		.party-selected{
+			text-align: center;
+			padding-left: 50px;	
+			
+		}
+
+		.entry-box {
+			max-width: 95%;
+			margin-top: 10px;
+			border: 1px solid black;
+			height: 570px;
+		}
+
+
+		.upper-section {
+			display: flex;
+			justify-content: space-between;
+			height: 400px;
+		}
+		
+		.left-container {
+			display: flex;
+			margin-top: 30px;
+			width: 300px;
+			margin-left: 30px;
+			height: 200px;
+			vertical-align: middle;
+			text-align: center;
+			justify-content: center;
+			
+		
+		}
+		.add-client{
+			display: flex;
+			justify-content: center;
+			border-radius: 20px;
+			padding-top: 80px;
+			width: 300px;
+			border:1px solid black;
+		}
+		.right-container{
+			margin-top:30px;
+		}		
+		
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-xl navbar-dark form-inline bg-primary">
+			
+			<div id="navbarToggler" class="navbar-collapse form-inline p-1">
+				<a href="#" class="navbar-brand brand">Purush</a>
+				<ul class="navbar-nav">
+					<li class="nav-item navItem ">
+						<a href="dashboard.html" class="nav-link">Dashboard</a>
+					</li>
+					<li class="navItem nav-item">
+						<a href="sales.html" class="nav-link">Sales</a>
+					</li>
+					<li class="navItem nav-item">
+						<a href="purchase.html" class="nav-link">Purchases</a>
+					</li>
+					<li class="navItem nav-item">
+						<a href="reports.html" class="nav-link">Reports</a>
+					</li>
+				</ul>
+				<ul class="navbar-nav navItem">
+					<li class=" Right nav-item">
+						<form>
+							<input type="search" class="form-control rounded-pill mr-sm-4" id="inputSearch" name="search" placeholder="Search">
+						</form>
+					</li>
+					<!-- <li class="nav-item">
+						<button class="btn btn-primary">Go</button>
+					</li> -->
+					<li class="accountIcon nav-item rounded-circle" >
+						<svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person-fill"  fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  						<path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" type="button" />
+						</svg>
+					</li>
+				</ul>
+			</div>
+	</nav>
+	
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  		<form class="form-inline ">
+    		<ul class="navbar-nav">
+    			
+
+    			<li class="nav-item space">
+    				<a type = "button" href="#" class="btn btn-outline-primary purchaseEntry">
+    						<svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-plus-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						  	<path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
+						  	<path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
+						  	<path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+							</svg>
+    						<b>Purchase Entry</b> 
+    				</a>
+    			</li>
+    			<li class="nav-item space ">
+    					<a href="#" class="nav-link"> <b class="ledger-text">Ledgers</b></a>
+    			</li>
+    			<li class="nav-item space ">
+    					<a class="nav-link" href="#"> <b class="entry-text">Entry</b></a>
+       			</li>
+       			<li class="nav-item space ">
+    					<a class="nav-link" href="#"> <b class="credit-text">Credit note</b></a>
+       			</li>
+    		</ul>
+  		</form>
+	</nav>
+	<div class="container-fluid entry-box">
+
+		<div class="container-fluid upper-section">
+			<section class="left-container">
+				<div class="add-client">
+					<i class="fas fa-user-plus symbol"></i>
+				<a href="#" data-toggle="modal" data-target="#exampleModal" class="addparty-text">Select Client</a>
+				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" id="select-client-modal">
+		          	<div class="modal-dialog">
+		            	<div class="modal-content">
+		              		<div class="modal-header">
+		                		<h5 class="modal-title" id="exampleModalLabel">Clients</h5>
+		                      	<input type="input" placeholder="Search"= required>
+		         
+		                		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		                  			<span aria-hidden="true">&times;</span>
+		                		</button>
+		              		</div>
+		                    <div class="modal-body">
+				                <table class="table1">
+				                  <tr class="row3">
+				                                          
+				                    <th>#</th>
+		                            <th> Name of Client</th>
+		                            <th> Address</th>
+				                  </tr>
+				                  <tr class="party-selected" role="button" data-dismiss="modal">
+		                                    <td>1</td>
+		                                    <td class="cnt"><div class="cnt">Client 1</div></td>
+		                                    <td> Maharashtra</td>
+		                            </tr>
+		                            <tr class="party-selected" role="button" data-dismiss="modal">
+		                                    <td>2</td>
+		                                    <td class="cnt">Client 2</td>
+		                                    <td>Bangalore</td>
+		                            </tr>
+		                            <tr class="party-selected" role="button" data-dismiss="modal">
+		                                    <td>3</td>
+		                                    <td class="cnt">Client 3</td>
+		                                    <td>Bangalore</td>
+		                            </tr>
+		                            <tr class="party-selected" role="button" data-dismiss="modal">
+		                                    <td>4</td>
+		                                    <td class="cnt">Client 4</td>
+		                                    <td>Maharashtra</td>
+		                            </tr>		                  
+				                </table>
+		                    </div>
+			                <div class="modal-footer">
+			                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Exit</button>
+			                </div>
+			            </div>    
+		            </div>
+		        </div>                   
+		    </section>
+			<section class="right-container">
+				<form>
+				  <div class="form-group row1">
+				    <label for="date" class="font"> Date :     </label>
+					<input type="date" name="Date" id="date" value="" >
+				  </div>
+				  <div class="form-group row2">
+				    <label for="client" class="font"> Bill No. :    </label>
+					<input type="text" name="Client" id="client" value="">
+							
+				  </div>
+				</form>
+			</section>	
+		</div>
+
+
+
+
+
+
+
+		<!-- <div class="row">
+			<div class="col-sm-4 col1">
+				<i class="fas fa-user-plus symbol"></i>
+				<a href="#" data-toggle="modal" data-target="#exampleModal" class="addparty-text">Select Client</a>
+					
+				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" id="select-client-modal">
+		          <div class="modal-dialog">
+		            <div class="modal-content">
+		              <div class="modal-header">
+		                <h5 class="modal-title" id="exampleModalLabel">Clients</h5>
+		                      <input type="input" placeholder="Search"= required>
+		         
+		                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		                  <span aria-hidden="true">&times;</span>
+		                </button>
+		              </div>
+		              <div class="modal-body">
+		                <table class="table1">
+		                  <tr class="row3">
+		                                          
+		                    <th>#</th>
+                            <th> Name of Client</th>
+                            <th> Address</th>
+		                  </tr>
+		                  <tr class="party-selected" role="button" data-dismiss="modal">
+                                    <td>1</td>
+                                    <td class="cnt"><div class="cnt">Client 1</div></td>
+                                    <td> Maharashtra</td>
+                            </tr>
+                            <tr class="party-selected" role="button" data-dismiss="modal">
+                                    <td>2</td>
+                                    <td class="cnt">Client 2</td>
+                                    <td>Bangalore</td>
+                            </tr>
+                            <tr class="party-selected" role="button" data-dismiss="modal">
+                                    <td>3</td>
+                                    <td class="cnt">Client 3</td>
+                                    <td>Bangalore</td>
+                            </tr>
+                            <tr class="party-selected" role="button" data-dismiss="modal">
+                                    <td>4</td>
+                                    <td class="cnt">Client 4</td>
+                                    <td>Maharashtra</td>
+                            </tr>		                  
+		                </table>
+		                
+		              </div>
+		              <div class="modal-footer">
+		                <button type="button" class="btn btn-secondary" data-dismiss="modal">Exit</button>
+		              </div>
+		            </div>
+		          </div>
+		        </div>                
+		    </div>    
+			<div class="col-sm-4 col2">
+				<form>
+				  <div class="form-group row1">
+				    <label for="date" class="font"> Date :     </label>
+					<input type="date" name="Date" id="date" value="" >
+				  </div>
+				  <div class="form-group row2">
+				    <label for="client" class="font"> Bill No. :    </label>
+					<input type="text" name="Client" id="client" value="">
+							
+				  </div>
+				</form>
+			</div>
+		</div -->
+		<table class="table">
+				<tr class="first">
+			      <th >Amount</th>
+			      <th >CGST</th>
+			      <th >SGST</th>
+			      <th >IGST</th>
+			      <th >Length</th>
+
+			    </tr>
+			    <tr class="second">
+			      <td class="box"><input type="text" name="Amount" id="amount" value=""></td>
+			      
+			      <td class="box"><input type="text" name="CGST" id="cgst" value=""></td>
+			      
+			      <td class="box"> <input type="text" name="SGST" id="sgst" value=""></td>
+			     
+			      <td class="box"><input type="text" name="IGST" id="igst" value=""></td>
+			      
+			      <td class="box"><input type="text" name="SGST" id="length" value=""></td>
+			    </tr>
+		</table>
+		<div class="xyz mb-3">
+			<a href="dashboard.html"><button type="submit" class="btn">Save<i class="fas fa-arrow-right sym"></i></button></a>
+
+		</div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  	<script type="text/javascript">
+  		$(document).ready(function() {
+  			$('.party-selected').click(function(){
+  				//"ilert("hello")
+  				$("i").remove(".symbol");
+  				//$("a").remove(".addparty-text");
+  				$('.left-container').css("border","0");
+  				$('.cnt').css("font","bold");
+
+  				var client = $(this).find("td:eq(1)").text();
+  				var address = $(this).find("td:eq(2)").text();
+  			
+  				$('.addparty-text').html(client + '<br>' + address);
+  				// $('.left-container').append('<br>');
+  				// $('.left-container').append('<br>');
+  				// $('.left-container').append('<br>');
+
+  				// $('.left-container').append(address);
+  				
+  				
+
+  			
+  			})
+
+        
+
+
+        
+        
+
+  
+	  		
+	  	});
+  	</script>
+</body>
+</html>

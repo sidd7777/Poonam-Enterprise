@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Poonam Enterprises</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+		  integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Literata:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        #calCalendar{
+            width: 40%;
+            height: 50%;
+            border: 1px solid black;
+            margin:5% 30%;
+        }
+
+        .calHeader{
+            text-align: center;
+            display: flex;
+            background-color: aliceblue;
+            box-shadow: 2px 3px 2px rgb(76, 79, 99);
+        }
+       
+        .month-year{
+            display: inline;
+        }
+
+        .dayP{
+            color: blue;
+            font-size: 20px;
+            text-align: center;
+            box-shadow: 2px 2px 5px lightblue;
+        }
+
+        #week {
+            font-size: 25px;
+            width: 100%;
+            display: flex;
+            color: blue;
+            background-color: aliceblue;
+        }
+        h1{
+            position:absolute;
+            margin-top: 30px ;
+            left: 10%;
+        }
+
+        #eventTable{
+            display: flex;
+            position:absolute;
+            margin-top: 70px ;
+            left: 10%;
+        }
+
+        #month , #year{
+            width: 50%;
+            justify-content: space-around;
+            font-size: 30px;
+            vertical-align: middle;
+        }
+
+        .button{
+            vertical-align: middle;
+        }
+
+        #daysBox{
+            margin-top: 20px;
+            color: blue;
+        }
+
+        #daysContainer{
+            margin-top: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid" id="calCalendar">
+        
+        <h1 id="dateDisplay"></h1>
+        <div class="container-fluid" id="eventTable">
+            <div class="displayEvent">
+                <p class="eventText">
+                    <h3>Event of the day</h3>
+                </p>
+            </div>
+            <div class="addEvent">
+                <ul class="">
+                    <li class="event"></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="calHeader row card-header">
+
+            <div class=" col order-first">
+                <button class="button btn " onclick="changeMonth('minus')"> 
+                    <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-caret-left-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm10.5 10a.5.5 0 0 1-.832.374l-4.5-4a.5.5 0 0 1 0-.748l4.5-4A.5.5 0 0 1 10.5 4v8z"/>
+                    </svg>
+                </button>
+                <p class="month-year" id="month">  </p>
+                <button class="button btn " onclick="changeMonth('add')"> 
+                    <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-caret-right-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4v8z"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class=" col order-end">
+                <button class="button btn " onclick="changeYear('minus')">
+                    <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-caret-left-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm10.5 10a.5.5 0 0 1-.832.374l-4.5-4a.5.5 0 0 1 0-.748l4.5-4A.5.5 0 0 1 10.5 4v8z"/>
+                    </svg>
+                </button>
+                <p class="month-year" id="year">  </p> 
+                <button class="button btn " onclick="changeYear('add')"> 
+                    <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-caret-right-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4v8z"/>
+                    </svg>
+                </button>       
+            </div>
+        
+        </div>
+
+        <div id="daysContainer">
+            <div style="display: flex; justify-content: space-around;" id="week">
+                <p>SUN</p>
+                <p>MON</p>   
+                <p>TUE</p>
+                <p>WED</p>
+                <p>THR</p>
+                <p>FRI</p>
+                <p>SAT</p>
+            </div>
+            <div style="display: flex; justify-content: space-around;" id="daysBox">    
+                <div id="0" class="dayColumn"></div>
+                <div id="1" class="dayColumn"></div>
+                <div id="2" class="dayColumn"></div>
+                <div id="3" class="dayColumn"></div>
+                <div id="4" class="dayColumn"></div>
+                <div id="5" class="dayColumn"></div>
+                <div id="6" class="dayColumn"></div>
+            </div>    
+        </div>
+    </div>
+    <script>
+
+        //To get current Year 
+        var currentYear = new Date().getFullYear(); //2020
+        //To get the current Month
+        var currentMonth = new Date().getMonth(); // 0(JAN) 1 2 3 4 5 6 7 8 9 10 11(DEC)
+        //Months
+        var months = ["January", "February", "March" , "April","May","June",
+                      "July","August","September","October","November","December"];
+
+        var weeks = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+        console.log(getNumberOfDays(currentYear,currentMonth));
+
+        // for getting number of days in a particular month 
+        function getNumberOfDays(year, month){
+           //month + 1 because it considers months from 1 to 12
+           //getMonth() function returns from 0 to 12    
+           var numDays = new Date(year, month + 1,0).getDate();
+           return numDays;
+       }
+
+       //Display month and year on calendar
+       function displayCal(getNumDays,newYear ,newMonth) {
+           //accessing month
+           var displayMonth = document.getElementById("month");
+           //months 0 to 11
+           var monthName = months[newMonth];
+           displayMonth.innerHTML = monthName;
+           //accessing year
+           var displayYear = document.getElementById("year");
+           displayYear.innerHTML = newYear;
+
+            var dayColumn = document.getElementsByClassName('dayColumn');
+
+            for(var j = 0 ; j<dayColumn.length ; j++)
+            {
+                dayColumn[j].innerHTML = "";
+            }
+
+            var firstDay = monthName + " 1," + newYear;
+            var firstDayOfMonth = new Date(firstDay).getDay();
+
+            for(var k = 0; k < firstDayOfMonth ; k++)
+            {
+                var blankHtmlTag = document.createElement('p');
+                var blankText = document.createTextNode(' ');
+                blankHtmlTag.style.padding = '27px';
+                blankHtmlTag.appendChild(blankText);
+                var columnDay = document.getElementById(k.toString());
+                columnDay.appendChild(blankHtmlTag);
+            }
+
+             let today = new Date();
+             let currentDay =  months[today.getMonth()] + " " + today.getDate() +  " " + today.getFullYear();
+             dateDisplay(currentDay);
+
+            for(var i = 1; i <= getNumDays; i++){
+
+                let date = monthName + " " + i.toString() +", " + newYear ; 
+                //create a p tag for each date
+                var dayHtmlTag = document.createElement('p');
+                dayHtmlTag.classList.add("dayP");
+                
+                dayHtmlTag.style.padding = "13px";
+                // text to store 
+                var dayText = document.createTextNode(i.toString());
+
+                //adding text in tag
+                dayHtmlTag.appendChild(dayText);
+
+                //getDate returns day of week in number format
+                var weekDays = new Date(date).getDay();
+                document.getElementById(weekDays.toString()).appendChild(dayHtmlTag);
+
+                // let day = weeks[weekDays] + " ," + i.toString() + " " + months[new] + " " +  newYear;
+
+                dayHtmlTag.addEventListener("click",function(){
+
+                    dateDisplay(date);
+                    alertbox();
+                });
+            }
+            
+       }
+
+       function alertbox(){
+           alert("hello");
+       }
+
+       function changeMonth(addMinus)
+        {
+            if(addMinus === 'minus')
+            {
+                if (currentMonth !== 0)
+                {
+                    currentMonth -= 1; 
+                    displayCal(getNumberOfDays(currentYear,currentMonth),currentYear,currentMonth);   
+                }
+                else{
+                    currentMonth = 11;
+                    currentYear -= 1;
+                    displayCal(getNumberOfDays(currentYear,currentMonth),currentYear,currentMonth);
+                }  
+            }
+            else{
+                if (currentMonth !== 11) {
+                    currentMonth += 1;
+                    displayCal(getNumberOfDays(currentYear,currentMonth),currentYear,currentMonth);
+                }
+                else
+                {
+                    currentMonth = 0;
+                    currentYear +=1;
+                    displayCal(getNumberOfDays(currentYear,currentMonth),currentYear,currentMonth);
+                }
+            }
+       }
+
+       function changeYear(addMinus) {
+           
+        if(addMinus === 'minus')
+            {
+                currentYear -=1;
+                displayCal(getNumberOfDays(currentYear,currentMonth),currentYear,currentMonth);
+            }    
+        else
+            {
+                currentYear +=1
+                displayCal(getNumberOfDays(currentYear,currentMonth),currentYear,currentMonth);
+            }
+
+        }
+
+        function dateDisplay(todaysDate){
+            document.getElementById('dateDisplay').innerText = todaysDate;
+        }   
+
+        displayCal(getNumberOfDays(currentYear,currentMonth),currentYear,currentMonth);
+        
+
+    </script>
+</body>
+</html>

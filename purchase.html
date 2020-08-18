@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Poonam Enterprises</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="C:\Users\nidhi\OneDrive\Desktop\HTML\Internship\style.css">
+	<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+		  integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Literata:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<style type="text/css">
+
+		#inputSearch{
+			margin: 5px;
+			width:300px;
+		}
+
+		button{
+			margin: auto;
+		}
+
+		button:hover{
+			text-decoration-color: #fff;
+		}
+		li{
+			margin: auto;
+		}
+		
+		.navItemTextDashboard{
+			color: #00a4d9;
+		}
+
+
+		.navbar-dark .navbar-nav .nav-link {
+    		color: rgba(255, 255, 255,0.8) !important;
+		}	
+
+		.navbar-dark .navbar-nav .nav-link:hover{
+			color: rgba(255,255,255,1) !important;
+		}
+
+		.navbar-dark .navbar-nav .nav-link:active{
+			color: rgba(255,255,255,1) !important;
+		}
+
+		a{
+			font-weight: 500;
+			font-size: 17px;
+			font-family: 'Literata', serif;
+		}
+
+		.Right{
+			margin-left: 60%;
+		}
+
+		.space{
+			margin-right: 30px;
+			align-content: center;
+		}
+
+		.accountIcon{
+			color: #fff;
+			margin: auto;
+			margin-left: 30px ;
+		}
+
+		.navItem{
+			margin-left: 20%;
+
+		}
+		nav{
+			border: 1px solid black;
+			box-shadow: 2px 2px 5px;
+		}
+		.graph-container{
+			background-color: white;
+			border-radius: 15px;
+			box-shadow: 2px 1px  10px black;
+			height: 500px;
+			margin: 0px;
+			border: 1px solid black ;
+			margin-left: 25px;
+			margin-top: 55px;
+		}
+		.graph-container h1{
+			justify-content: center;
+			display: flex;
+			padding-top: 220px;
+
+		}
+
+		.history-container{
+			background-color: rgb(165,226,243);
+			border-radius: 15px;
+			box-shadow: 2px 1px  10px black;
+			display: flex;
+			border:1px solid black;
+			margin-left: 60px;
+			margin-top: 55px;
+			height: 500px;
+		}
+
+		.history-box h4{
+			border: 0.5px solid black;
+			border-radius: 55px;
+			background-color: rgb(12,127,229); 
+			width: 500px;
+			height: 55px;
+			padding-top: 9px;
+			margin-left: 50px;
+			margin-top: 20px;
+			color: white;
+			font-weight: bold;		
+
+
+		}
+		.history-box {
+			max-width: 100%;
+		}
+		.scrollable{
+			width: 100%;
+			height: 400px;
+			margin-right: 0px;
+			border:1px solid black;
+			background-color: white;
+			overflow: scroll;
+			overflow-x: hidden;
+			text-align: left;
+
+		}
+		
+		.font {
+			margin-left: 10px;
+		}
+
+		#number{
+		max-width: 30px;
+		border: none;
+		margin-left: 0px;
+		background-color: white;
+		color: black;
+		}
+		#date{
+		max-width: 170px;
+		margin-left: 0px;
+		border: none;
+		background-color: #89C7FF;
+		color: black;
+		padding-left: 20px;
+		}
+
+		#amount{
+		max-width: 300px;
+		border: none;
+		background-color: #89C7FF;
+		color: black;
+		}
+
+		#client{
+		max-width: 500px;
+		margin-left: 0px;
+		border: none;
+		background-color: #89C7FF;
+		color: black;
+		}
+
+		.details{
+		border-top: 1px solid black;
+		border-bottom: 1px solid black;
+		margin-bottom: 7px;
+		margin-left: 3px;
+		border-radius: 0px;
+		width: 680px;
+		background-color: white;
+
+		}
+		.nav button[type="submit"]{
+			cursor: pointer;
+			transition: 0.5s;
+
+		}
+		.nav button[type="submit"]:hover{
+			box-shadow: 0px 9px 10px -2px rgba(0,0,0,0.55);
+			-webkit-box-shadow: 0px 9px 10px -2px rgba(0,0,0,0.55);
+			-moz-box-shadow: 0px 9px 10px -2px rgba(0,0,0,0.55);
+
+		}
+
+
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-xl navbar-dark form-inline bg-primary">
+			
+			<div id="navbarToggler" class="navbar-collapse form-inline p-1">
+				<a href="#" class="navbar-brand brand">Purush</a>
+				<ul class="navbar-nav">
+					<li class="nav-item navItem ">
+						<a href="#" class="nav-link">Dashboard</a>
+					</li>
+					<li class="navItem nav-item">
+						<a href="#" class="nav-link">Sales</a>
+					</li>
+					<li class="navItem nav-item">
+						<a href="#" class="nav-link">Purchases</a>
+					</li>
+					<li class="navItem nav-item">
+						<a href="#" class="nav-link">Reports</a>
+					</li>
+				</ul>
+				<ul class="navbar-nav navItem">
+					<li class=" Right nav-item">
+						<form>
+							<input type="search" class="form-control rounded-pill mr-sm-4" id="inputSearch" name="search" placeholder="Search">
+						</form>
+					</li>
+					<!-- <li class="nav-item">
+						<button class="btn btn-primary">Go</button>
+					</li> -->
+					<li class="accountIcon nav-item rounded-circle" >
+						<svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person-fill"  fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  						<path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" type="button" />
+						</svg>
+					</li>
+				</ul>
+			</div>
+	</nav>
+	
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  		<form class="form-inline ">
+    		<ul class="navbar-nav">
+    			
+
+    			<li class="nav-item space">
+    				<a type = "button" href="entry.html" class="btn btn-outline-primary purchaseEntry">
+						<svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-plus-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						  <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
+						  <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
+						  <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+						</svg>
+						<b>Purchase Entry</b> 
+					</a>
+    			</li>
+    			<li class="nav-item space ">
+    					<a href="#" class="nav-link"> <b class="ledger-text navItemTextDashboard">Client</b></a>
+    			</li>
+    			<li class="nav-item space ">
+    					<a class="nav-link" href="#"> <b class="entry-text navItemTextDashboard">Entries</b></a>
+       			</li>
+       			<li class="nav-item space ">
+    					<a class="nav-link" href="#"> <b class="credit-text navItemTextDashboard">Credit Note</b></a>
+       			</li>
+       			<li class="nav-item space ">
+    					<a class="nav-link" href="#"> <b class="stock-text navItemTextDashboard">Stock</b></a>
+       			</li>
+    		</ul>
+  		</form>
+	</nav>
+	<div class="container-fluid "><!--Heyy this is a comment-->
+		<div class="row">
+			<div class="col-lg-5 col-md-5 d-none d-md-block graph-container">
+				<h1>Graph</h1>
+			</div>
+			<div class="col-lg-6 col-md-6 history-container">
+				<div class="col-lg-8 col-md-12 col-sm-9 col-xs-12 history-box text-center">
+					<div class="logo mb-3">
+						<h4>Purchase History</h4>
+					</div>
+					<div class="scrollable ">
+						
+					    <div class="tabs" role="tablist">
+							<div type="button" class="details ">
+								<label for="number" class="font">Number : </label>
+								<input type="text" id="number" name="Number" value="1001" readonly>
+								<label for="date" class="font">Date : </label>
+								<input type="date" name="Date" id="date" value="" >
+								<label for="amount" class="font">Amount : Rs.</label>
+								<input type="text" name="Amount" id="amount" value="30,00,000.00" readonly>
+								<label for="client" class="font">Client : </label>
+								<input type="text" name="Client" id="client" value="Devansh Bagaria" readonly>
+							</div>
+							<div type="button" class="details rounded-lg">
+								<label for="number" class="font">Number : </label>
+								<input type="text" id="number" name="Number" value="1001" readonly>
+								<label for="date" class="font">Date : </label>
+								<input type="date" name="Date" id="date" value="" >
+								<label for="amount" class="font">Amount : Rs.</label>
+								<input type="text" name="Amount" id="amount" value="30,000.00" readonly>
+								<label for="client" class="font">Client : </label>
+								<input type="text" name="Client" id="client" value="Devansh Bagaria" readonly>
+							</div>
+
+							<div type="button" class="details rounded-lg">
+								<label for="number" class="font">Number : </label>
+								<input type="text" id="number" name="Number" value="1001" readonly>
+								<label for="date" class="font">Date : </label>
+								<input type="date" name="Date" id="date" value="" >
+								<label for="amount" class="font">Amount : Rs.</label>
+								<input type="text" name="Amount" id="amount" value="30,000.00" readonly>
+								<label for="client" class="font">Client : </label>
+								<input type="text" name="Client" id="client" value="Devansh Bagaria" readonly>
+							</div>
+							<div type="button" class="details rounded-lg">
+								<label for="number" class="font">Number : </label>
+								<input type="text" id="number" name="Number" value="1001" readonly>
+								<label for="date" class="font">Date : </label>
+								<input type="date" name="Date" id="date" value="" >
+								<label for="amount" class="font">Amount : Rs.</label>
+								<input type="text" name="Amount" id="amount" value="30,000.00" readonly>
+								<label for="client" class="font">Client : </label>
+								<input type="text" name="Client" id="client" value="Devansh Bagaria" readonly>
+							</div>
+							<div type="button" class="details rounded-lg">
+								<label for="number" class="font">Number : </label>
+								<input type="text" id="number" name="Number" value="1001" readonly>
+								<label for="date" class="font">Date : </label>
+								<input type="date" name="Date" id="date" value="" >
+								<label for="amount" class="font">Amount : Rs.</label>
+								<input type="text" name="Amount" id="amount" value="30,000.00" readonly>
+								<label for="client" class="font">Client : </label>
+								<input type="text" name="Client" id="client" value="Devansh Bagaria" readonly>
+							</div>
+							<div type="button" class="details rounded-lg">
+								<label for="number" class="font">Number : </label>
+								<input type="text" id="number" name="Number" value="1001" readonly>
+								<label for="date" class="font">Date : </label>
+								<input type="date" name="Date" id="date" value="" >
+								<label for="amount" class="font">Amount : Rs.</label>
+								<input type="text" name="Amount" id="amount" value="30,000.00" readonly>
+								<label for="client" class="font">Client : </label>
+								<input type="text" name="Client" id="client" value="Devansh Bagaria" readonly>
+							</div>
+							<div type="button" class="details rounded-lg">
+								<label for="number" class="font">Number : </label>
+								<input type="text" id="number" name="Number" value="1001" readonly>
+								<label for="date" class="font">Date : </label>
+								<input type="date" name="Date" id="date" value="" >
+								<label for="amount" class="font">Amount : Rs.</label>
+								<input type="text" name="Amount" id="amount" value="30,000.00" readonly>
+								<label for="client" class="font">Client : </label>
+								<input type="text" name="Client" id="client" value="Devansh Bagaria" readonly>
+							</div>
+							<div type="button" class="details rounded-lg">
+								<label for="number" class="font">Number : </label>
+								<input type="text" id="number" name="Number" value="1001" readonly>
+								<label for="date" class="font">Date : </label>
+								<input type="date" name="Date" id="date" value="" >
+								<label for="amount" class="font">Amount : Rs.</label>
+								<input type="text" name="Amount" id="amount" value="30,000.00" readonly>
+								<label for="client" class="font">Client : </label>
+								<input type="text" name="Client" id="client" value="Devansh Bagaria" readonly>
+							</div>
+							<div type="button" class="details rounded-lg">
+								<label for="number" class="font">Number : </label>
+								<input type="text" id="number" name="Number" value="1001" readonly>
+								<label for="date" class="font">Date : </label>
+								<input type="date" name="Date" id="date" value="" >
+								<label for="amount" class="font">Amount : Rs.</label>
+								<input type="text" name="Amount" id="amount" value="30,000.00" readonly>
+								<label for="client" class="font">Client : </label>
+								<input type="text" name="Client" id="client" value="Devansh Bagaria" readonly>
+							</div>
+							<div type="button" class="details rounded-lg">
+								<label for="number" class="font">Number : </label>
+								<input type="text" id="number" name="Number" value="1001" readonly>
+								<label for="date" class="font">Date : </label>
+								<input type="date" name="Date" id="date" value="" >
+								<label for="amount" class="font">Amount : Rs.</label>
+								<input type="text" name="Amount" id="amount" value="30,000.00" readonly>
+								<label for="client" class="font">Client : </label>
+								<input type="text" name="Client" id="client" value="Devansh Bagaria" readonly>
+							</div>
+							<div type="button" class="details rounded-lg">
+								<label for="number" class="font">Number : </label>
+								<input type="text" id="number" name="Number" value="1001" readonly>
+								<label for="date" class="font">Date : </label>
+								<input type="date" name="Date" id="date" value="" >
+								<label for="amount" class="font">Amount : Rs.</label>
+								<input type="text" name="Amount" id="amount" value="30,000.00" readonly>
+								<label for="client" class="font">Client : </label>
+								<input type="text" name="Client" id="client" value="Devansh Bagaria" readonly>
+							</div>
+							<div type="button" class="details rounded-lg">
+								<label for="number" class="font">Number : </label>
+								<input type="text" id="number" name="Number" value="1001" readonly>
+								<label for="date" class="font">Date : </label>
+								<input type="date" name="Date" id="date" value="" >
+								<label for="amount" class="font">Amount : Rs.</label>
+								<input type="text" name="Amount" id="amount" value="30,000.00" readonly>
+								<label for="client" class="font">Client : </label>
+								<input type="text" name="Client" id="client" value="Devansh Bagaria" readonly>
+							</div>
+							<div type="button" class="details rounded-lg">
+								<label for="number" class="font">Number : </label>
+								<input type="text" id="number" name="Number" value="1001" readonly>
+								<label for="date" class="font">Date : </label>
+								<input type="date" name="Date" id="date" value="" >
+								<label for="amount" class="font">Amount : Rs.</label>
+								<input type="text" name="Amount" id="amount" value="30,000.00" readonly>
+								<label for="client" class="font">Client : </label>
+								<input type="text" name="Client" id="client" value="Devansh Bagaria" readonly>
+							</div>
+							<div type="button" class="details rounded-lg">
+								<label for="number" class="font">Number : </label>
+								<input type="text" id="number" name="Number" value="1001" readonly>
+								<label for="date" class="font">Date : </label>
+								<input type="date" name="Date" id="date" value="" >
+								<label for="amount" class="font">Amount : Rs.</label>
+								<input type="text" name="Amount" id="amount" value="30,000.00" readonly>
+								<label for="client" class="font">Client : </label>
+								<input type="text" name="Client" id="client" value="Devansh Bagaria" readonly>
+							</div>
+						</div>					
+					</div>			
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  	<script type="text/javascript">
+
+  			$(document).ready(function () {
+				
+		  });
+	  		
+
+  	</script>
+</body>
+</html>

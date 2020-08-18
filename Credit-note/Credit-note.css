@@ -1,0 +1,439 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+
+
+
+
+
+
+.image-container{
+	
+	background-color: rgb(64,114,195);
+	height: 630px;
+	border: 1px solid black ;
+	margin-left: 40px;
+	margin-top: 35px;
+}
+.image-container img{
+	height: 580px;
+	width:350px;
+	margin-left: 65px;
+	margin-top: 25px;
+
+}
+
+.form-container{
+	background-color: white;
+	display: flex;
+	justify-content: center;
+}
+.form-box{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+	
+.form-box h3{
+	border: 0.5px solid black;
+	border-radius: 55px;
+	background-color: rgb(64,114,195); 
+	width: 450px;
+	height: 65px;
+	padding-top: 12px;
+	margin-left: 10px;
+	margin-bottom: 80px;
+	color: white;
+	font-weight: bold;
+
+}
+.form-box h4{
+	font-weight: bold;
+	color: grey;
+}
+
+.form-box .form-input{
+	position: relative;
+}
+
+.form-box .form-input input{
+	width: 100%;
+	height: 40px;
+	margin-bottom: 20px;
+	border:none;
+	border-radius: 1px;
+	outline:none;
+	background:rgb(245,237,237);
+	padding-left: 45px;
+}
+
+.form-box .form-input span{
+	position: absolute;
+	top: 8px;
+	padding-left: 20px;
+	color: #777;
+
+}
+
+.form-box .form-input input::placeholder{
+	padding-left: 0px;
+
+}
+
+.form-box .form-input input:focus
+.form-box .form-input input:valid{
+	border-bottom: 2px solid #48403d; 
+}
+
+.form-box input[type="checkbox"]:not(:checked) + label:before{
+	background-color: transparent;
+	border:2px solid black;
+	width: 15px;
+	height: 15px;
+}
+
+.form-box .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before{
+	background-color: #48403d;
+	border:0px;
+}
+
+.forget-link{
+	color: rgb(128,128,128);
+	font-weight: bold;
+}
+
+.forget-link:hover{
+	color: #292525;
+}
+
+.form-box button[type="submit"]{
+	border: 0.5px solid black;
+	border-radius: 45px;
+	cursor: pointer;
+	background-color: rgb(64,114,195); 
+	width: 150px;
+	height: 42px;
+	margin-left: 160px;
+	margin-top: 60px;
+	color: white;
+	font-weight: bold;
+	transition: 0.5s;
+
+}
+.form-box button[type="submit"]:hover{
+	box-shadow: 0px 9px 10px -2px rgba(0,0,0,0.55);
+	-webkit-box-shadow: 0px 9px 10px -2px rgba(0,0,0,0.55);
+	-moz-box-shadow: 0px 9px 10px -2px rgba(0,0,0,0.55);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+    font-family: 'Varela Round',sans-serif;
+}
+
+h1 {
+    font-family: 'Varela Round',sans-serif;
+    display: inline-block;
+}
+
+.top-bar {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.arrow-top {
+    width: 30px;
+    height: 30px;
+}
+
+.arrow-right {
+    width: 25px;
+    height: 25px;
+    padding-bottom: 3px;
+}
+
+.padding-toprow {
+    padding-left: 10px ;
+    padding-right: 10px;
+}
+
+.centre-align {
+    display: flex;
+}
+
+.save {
+    border-radius: 25px;
+}
+
+.filler {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.bill-box {
+    max-width: 98%;
+    height: 700px;
+    border:1px solid black;
+    box-shadow: black;
+    border-radius: 20px;
+}
+.container-sm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+}
+.add-party-box {
+    justify-self: left;
+    float: left;
+    margin-left: 30px;
+    margin-top: 30px;
+    border: 1px solid black;
+    width: 400px;
+    max-width: 70%;
+    height: 200px;
+    grid-row: 1;
+}
+
+.client-search-bar {
+    border-radius: 20px;
+    width: 400px;
+}
+
+.add-party-icon {
+    width: 30px;
+    height: 30px;
+    padding-right: 10px;
+}
+
+.upper-section {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.add-party {
+    color: black;
+    font-size: large;
+    font-weight: 600;
+}
+
+#add-party-modal {
+    margin-top: 100px;
+}
+
+.invoice-details {
+    grid-row: 1;
+    grid-row: column 500px;;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    float: right;
+    width: 500px;
+    height: 200px;
+}
+
+
+table {
+    margin-top: 20px;
+}
+
+td {
+    padding: 10px;
+}
+
+#add-item-modal {
+    margin-top: 300px;
+}
+
+.item-box {
+    margin-top: 300px;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    height: 300px;
+}
+
+.product-details-box {
+    border: 1px solid black;
+    height: 300px;
+    text-align: center;
+}
+
+.hash-cell {
+    width: 5%;
+}
+
+
+.description-cell {
+    width: 30%;    
+}
+
+.code-cell {
+    width: 10%;    
+}
+
+.size-cell {
+    width: 10%;    
+}
+
+.qty-cell {
+    width: 10%;    
+}
+
+.rate-cell {
+    width: 15%;    
+}
+
+.amt-cell {
+    width: 20%;    
+}
+
+.button-delete {
+    font-size: xx-small;
+    margin-left: 20px;
+}
+
+.item-selected {
+    display: block;
+}
+
+
+
+.plus {
+    width: 20px;
+    height: 20px;
+}
+
+.select-item {
+    border-radius: 15px;
+    float: left;
+    margin-left: 100px;
+}
+
+.product-code-text {
+    max-width: 50%;
+}
+.size-text {
+    max-width: 30%;
+}
+.qty-text {
+    max-width: 30%;
+}
+.rate-text {
+    max-width: 50%;
+}
+.amt-text {
+    border: 0;
+    max-width: 50%;
+    
+}
+
+.table {
+    text-align: center;
+}
+
+
+
+.qty-total-box {
+    max-width: 30%;
+}
+
+.bottom-box {
+    margin: 0;
+    display: flex;
+    align-content: center;
+    justify-content: flex-end ;
+}
+
+#add-disc-modal {
+    width: 275px;
+    margin-left: 700px;
+    margin-top: 400px;
+    text-align: center;
+}
+
+.disc-input {
+    display: block;
+    margin-left: 12px;
+    max-width: 100%;
+    margin-bottom: 10px;
+    
+}
+
+.disc-apply {
+    width: 30px;
+    height: 30px;
+}
+
+
+.disc-cancel {
+    width: 30px;
+    height: 30px;
+}
+
+.disc-plus {
+    width: 20px;
+    height: 20px;
+}
+
+#tax-collapse {
+    position: absolute;
+}
+
+.tax-split-cell {
+    padding: 5px;
+}
+
+.cgst-input {
+    border: 0;
+    margin-left: 10px;
+    background-color: lightgrey;
+}
+
+.sgst-input {
+    border: 0;
+    margin-left: 10px;
+    background-color: lightgrey;
+}
+
+.igst-input {
+    border: 0;
+    margin-left: 10px;
+    background-color: lightgrey;
+}
+
+
+.disc {
+    padding-top: 10px;
+}
+
+.bottom-bar {
+    padding-top: 10px;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+

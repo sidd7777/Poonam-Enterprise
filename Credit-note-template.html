@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Bill</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+
+
+    <style type="text/css">
+        .heading{
+            text-align: center;
+            text-decoration: underline;
+            
+        }
+        .tax-invoice {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .address {
+            text-align: center;
+        }
+        .upper-box {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .party-details-cell {
+            padding: 10px;
+            width: 150px;
+        }
+
+        .input-cell {
+            width: 400px !important;
+        }
+        .name-field {
+            width: 100%;
+        }
+        .address-field {
+            height: 60px;
+            width: 100%;
+        }
+        .gst-field {
+            width: 100%;
+        }
+        .right-details {
+            padding-top: 10px;
+            padding-right: 20px;
+        }
+        .invoice-details-cell {
+            padding: 10px;
+        }
+
+        .main-table {
+            text-align: center;
+        }
+        .main-inputs {
+            border: 0;
+        }
+        .bottom-box {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .left-details {
+            padding-top: 10px;
+        }
+
+        .disc-input {
+            width: 30%;
+            border: 0px;
+        }
+        .cgst-input {
+            width: 30%;
+            border: 0px;
+        }
+        .sgst-input {
+            width: 30%;
+            border: 0px;
+        }
+        .igst-input {
+            width: 30%;
+            border: 0px;
+        }
+        
+        .footer {
+            padding-top: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .gst-info {
+            max-width: 50%;
+        }
+        .signature {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tax-invoice">
+        <h6>GST NO. 27ADHPB7062P1Z6</h6>
+        <h6>CREDIT NOTE</h6>
+        <table border="1px" class="copy-type">
+            <tr>
+                <td>ORIGINAL</td>
+            </tr>
+            <tr>
+                <td>DUPLICATE</td>
+            </tr>
+
+        </table>
+    </div>
+    
+    <div class="heading">
+        <h2>POONAM ENTERPRISES</h2>
+    </div>
+    <br>
+    <div class="address">
+        <h5>81, Mehta Industrial Estate, Liberty Garden, road no. 3, Behind ICICI Bank, Malad West, Mumbai-400064</h5>
+        <h6>Mobile No: 9321547258</h6>
+        <br>
+    </div>
+
+    <section class="upper-box">
+        <div class="left-details">
+            <table class="party-details">
+                <tr>
+                    <td class="party-details-cell">Name :</td>
+                    <td class="party-details-cell input-cell"><input type="text" class="name-field" readonly></td>
+                </tr>
+                <tr>
+                    <td class="party-details-cell">Address :</td>
+                    <td class="party-details-cell input-cell"><input type="text" class="address-field" readonly></td>
+                </tr>
+                <tr>
+                    <td class="party-details-cell">GST No :</td>
+                    <td class="party-details-cell input-cell"><input type="text" class="gst-field" readonly></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right-details">
+            <table class="invoice-details">
+                <tr>
+                    <td class="invoice-details-cell">Invoice Number :</td>
+                    <td class="invoice-details-cell"><input type="text" class="invoice-number-field" readonly></td>
+                </tr>
+                <tr>
+                    <td class="invoice-details-cell">Invoice Date :</td>
+                    <td class="invoice-details-cell"><input type="text" class="invoice-date-field" readonly></td>
+                </tr>
+                <tr>
+                    <td class="invoice-details-cell">Transporter :</td>
+                    <td class="invoice-details-cell"><input type="text" class="transporter-field" readonly></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section class="main-section container-fluid">
+        <table class="main-table table table-bordered">
+            <thead>
+                <tr>
+                    <th>DESCRIPTION</th>
+                    <th>PRODUCT CODE</th>
+                    <th>SIZE</th>
+                    <th>QTY</th>
+                    <th>RATE (Rs.)</th>
+                    <th>AMOUNT (Rs.)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td><input type="text" class="main-inputs description-input" readonly></td>
+                <td><input type="text" class="main-inputs product-code-input" readonly></td>
+                <td><input type="text" class="main-inputs size-input" readonly></td>
+                <td><input type="text" class="main-inputs qty-input" readonly></td>
+                <td><input type="text" class="main-inputs rate-input" readonly></td>
+                <td><input type="text" class="main-inputs amt-input" readonly></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="main-inputs description-input" readonly></td>
+                    <td><input type="text" class="main-inputs product-code-input" readonly></td>
+                    <td><input type="text" class="main-inputs size-input" readonly></td>
+                    <td><input type="text" class="main-inputs qty-input" readonly></td>
+                    <td><input type="text" class="main-inputs rate-input" readonly></td>
+                    <td><input type="text" class="main-inputs amt-input" readonly></td>
+                </tr>
+           
+            </tbody>
+            
+        </table>
+    </section>
+    <section class="bottom-box">
+        <section class="left-details">
+            <table border="3px" class="bank-details">
+                <tr>
+                    <td>
+                        ICICI BANK
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        A/C NO. 015805006516 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        BRANCH - MALAD (WEST) MUMBAI
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        IFSC CODE - ICIC0000158
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        MICR CODE NO. 400229017
+                    </td>
+                </tr>
+            </table>
+
+
+
+        </section>
+        <section class="right-details">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>SUBTOTAL :</td>
+                        <td><input type="text" class="" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            DISCOUNT : 
+                            <input type="text" class="disc-input" readonly>
+                        </td>
+                        <td><input type="text" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>TOTAL :</td>
+                        <td><input type="text" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            CGST :
+                            <input type="text" class="cgst-input" readonly>
+                        </td>
+                        <td><input type="text" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            SGST :
+                            <input type="text" class="sgst-input" readonly>
+                        </td>
+                        <td><input type="text" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            IGST :
+                            <input type="text" class="igst-input" readonly>
+                        </td>
+                        <td><input type="text" readonly></td>
+                    </tr>
+                    <tr>
+                        <td><h6>GRAND TOTAL</h6></td>
+                        <td><input type="text" readonly></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </section>
+    <section class="footer">
+        <section class="gst-info">
+            <p>I/We hereby declare that my/our registration certificate under the GST Act 1 July 2017 is in force on date on which the sale of goods specified in this bill/cash memorandum is made by me/us and that the transaction of sales covered by this bill/cash memorandum has been effected by me/us in the regular course of my/our business.</p>
+            <p>This certifies that the particulars given above are true and correct and the amount indicated represents the price actually charged and that there is no flaw od additional consideration directly from the buyer, subject to mumbai jurisdiction only.</p>
+        </section>
+        <section class="signature">
+            <div>
+                Poonam Enterprises
+            </div>
+            <div>
+                Authorized Signatory
+            </div>
+        </section>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.js"></script>
+</body>
+</html>
